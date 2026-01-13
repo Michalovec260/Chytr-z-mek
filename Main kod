@@ -1,0 +1,15 @@
+const int RELAY_PIN  = 13;  // relé
+const int BUTTON_PIN = 4;   // externí tlačítko
+
+void setup() {
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);  // tlačítko proti GND
+}
+
+void loop() {
+  if (digitalRead(BUTTON_PIN) == LOW) {
+    digitalWrite(RELAY_PIN, HIGH);   // sepni relé 
+  } else {
+    digitalWrite(RELAY_PIN, LOW);
+  }
+}
